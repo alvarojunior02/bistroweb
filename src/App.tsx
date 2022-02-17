@@ -1,26 +1,45 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {
+  BrowserRouter,
+  Routes,
+  Route
+} from "react-router-dom";
 
-function App() {
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+// screens
+import HomeScreen from "./screens/HomeScreen";
+
+import Recipes from './screens/RecipesScreen';
+import RecipeInfo from "./screens/RecipeInfoScreen";
+import CreateRecipe from "./screens/CreateRecipeScreen";
+import UpdateRecipe from "./screens/UpdateRecipeScreen";
+
+import Products from "./screens/ProductsScreen";
+import ProductInfo from "./screens/ProductInfoScreen";
+import CreateProduct from "./screens/CreateProductScreen";
+import UpdateProduct from "./screens/UpdateProductScreen";
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <ToastContainer />
+      <Routes>
+        <Route path="/" element={<HomeScreen />} />
+
+        <Route path="/recipes" element={<Recipes />} />
+        <Route path="/recipes/info/:id" element={<RecipeInfo />} />
+        <Route path="/recipes/create" element={<CreateRecipe />} />
+        <Route path="/recipes/update/:id" element={<UpdateRecipe />} />
+
+        <Route path="/products" element={<Products />} />
+        <Route path="/products/info/:id" element={<ProductInfo />} />
+        <Route path="/products/create" element={<CreateProduct />} />
+        <Route path="/products/update/:id" element={<UpdateProduct />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
 export default App;
+
