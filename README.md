@@ -9,6 +9,9 @@ Essa é um aplicação Web, com objetivo de auxiliar os funcionários do SMG Bis
   - React-Router-Dom;
   - React-Toastfy.
 
+## Tela Home
+<img src="https://user-images.githubusercontent.com/64383944/154526889-c2cca58b-f38b-4b39-bb80-d135f6e35327.png"/>
+
 ## Como rodar localmente: 
   <ol>
     <li>Ter o node e yarn instalados;</li>
